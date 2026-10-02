@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management | DevOps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">
+        <div class="logo">SM</div>
+        <div>
+            <h1>Student Management</h1>
+            <p>End-to-End DevOps Application</p>
+        </div>
+    </div>
+    <div class="status"><span></span> API Connected</div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div>
+            <p class="eyebrow">STUDENT MANAGEMENT SYSTEM</p>
+            <h2>Manage students in one simple dashboard.</h2>
+            <p class="hero-text">Create, view, update and delete student records through a clean web interface.</p>
+        </div>
+        <div class="hero-card">
+            <strong>CRUD</strong>
+            <span>4 operations</span>
+        </div>
+    </section>
+
+    <section class="grid">
+        <div class="card form-card">
+            <div class="card-head">
+                <div>
+                    <h3 id="formTitle">Add Student</h3>
+                    <p>Enter student details below.</p>
+                </div>
+                <button class="ghost" id="resetBtn">Clear</button>
+            </div>
+
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+                <label>Name<input id="name" required placeholder="e.g. Priya Shukla"></label>
+                <label>Email<input id="email" type="email" required placeholder="student@example.com"></label>
+                <label>Course<input id="course" required placeholder="e.g. MSc IT"></label>
+                <label>Age<input id="age" type="number" min="1" required placeholder="22"></label>
+                <button class="primary" type="submit" id="saveBtn">Add Student</button>
+            </form>
+            <p id="message" class="message"></p>
+        </div>
+
+        <div class="card table-card">
+            <div class="card-head">
+                <div>
+                    <h3>Students</h3>
+                    <p id="countText">0 records</p>
+                </div>
+                <button class="secondary" onclick="loadStudents()">↻ Refresh</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr><th>ID</th><th>Name</th><th>Email</th><th>Course</th><th>Age</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+                <div id="emptyState" class="empty">No students yet. Add your first student.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="crud-strip">
+        <div><b>CREATE</b><span>Add a new student</span></div>
+        <div><b>READ</b><span>View all students</span></div>
+        <div><b>UPDATE</b><span>Edit student details</span></div>
+        <div><b>DELETE</b><span>Remove a student</span></div>
+    </section>
+</main>
+
+<footer>Student Management System • Spring Boot • MySQL • Docker • Kubernetes</footer>
+<script src="script.js"></script>
+</body>
+</html>
