@@ -122,3 +122,10 @@ kubectl logs -l app=student-management
 ## Security scanning
 
 The GitHub Actions pipeline uses Trivy to scan the Docker image for HIGH and CRITICAL vulnerabilities. Jenkins also calls Trivy if it is installed on the Jenkins machine.
+
+## Student Management Features
+
+- Student CRUD operations
+- MySQL database integration
+- REST API
+- Automated testing
