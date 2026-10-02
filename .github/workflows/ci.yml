@@ -25,15 +25,15 @@ jobs:
           cache: maven
 
       - name: Run tests
-        run: ./mvnw test
+        run: mvn test
 
       - name: Build application
-        run: ./mvnw clean package -DskipTests
+        run: mvn clean package -DskipTests
 
       - name: Trivy Security Scan
         uses: aquasecurity/trivy-action@0.35.0
         with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          format: 'table'
+          scan-type: fs
+          scan-ref: .
+          format: table
           exit-code: '0'
